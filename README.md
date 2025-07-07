@@ -21,7 +21,7 @@ Example:
 bash
 Copy
 Edit
-git clone https://github.com/yourusername/yourproject.git
+git clone https://github.com/skasix/
 cd yourproject
 2. Install Dependencies
 What to do: Use Maven to download and install all the necessary libraries and dependencies.
