@@ -11,47 +11,138 @@ What things you need to install the software and how to install them.
 Give an example.
 
 Installation
-A series of step-by-step examples that tell you what to run in order to have a development environment up and running.
+Below is a clear, step-by-step guide to get your development environment up and running. Follow each step carefully, and by the end, you’ll be able to build, test, and run the project on your own machine.
 
-Explain what that step will be.
+1. Clone the Repository
+What to do: Download the source code to your local machine.
+Why: This gives you access to the entire project so you can build and run it locally.
+Example:
 
-Give an example and repeat
+bash
+Copy
+Edit
+git clone https://github.com/yourusername/yourproject.git
+cd yourproject
+2. Install Dependencies
+What to do: Use Maven to download and install all the necessary libraries and dependencies.
+Why: Ensures that your project has everything it needs to compile and run correctly.
+Example:
 
-until you finish. Finish with an example of how to obtain data from the system or how to use it for a small demo.
+bash
+Copy
+Edit
+mvn clean install
+3. Run the Application
+What to do: Use the built-in server to start the application locally.
+Why: This allows you to see the project in action on your machine.
+Example:
 
-Running the tests
-Explain how to run automated tests for this system.
+bash
+Copy
+Edit
+mvn exec:java
+4. Check the Application
+What to do: Open your browser and navigate to http://localhost:8080.
+Why: Verify that the application is up and running.
+Example:
+You should see the homepage or API endpoint responding.
 
-End-to-end tests
-Explain what these tests verify and why.
+5. Fetch Data for a Small Demo
+What to do: Use curl or your browser to make a sample request.
+Why: Demonstrates that your system is providing data correctly.
+Example:
 
-Give an example.
+bash
+Copy
+Edit
+curl http://localhost:8080/api/feed
+Running the Tests
+This project includes automated tests to help ensure that your code works as expected. Here’s how to run them:
 
-Code style tests
-Explain what these tests verify and why.
+bash
+Copy
+Edit
+mvn test
+End-to-End Tests
+What they verify:
+End-to-end (E2E) tests check the entire workflow from start to finish. They simulate real user interactions to make sure that all parts of the system work together as intended.
 
-Give an example.
+Why they matter:
+They help catch integration issues that unit tests might miss.
+
+Example:
+
+bash
+Copy
+Edit
+mvn verify -P e2e
+This runs the full E2E test suite defined in your project.
+
+Code Style Tests
+What they verify:
+Code style tests check that your code follows the agreed-upon formatting and style guidelines.
+
+Why they matter:
+Consistent code style makes collaboration easier and the codebase more maintainable.
+
+Example:
+
+bash
+Copy
+Edit
+mvn checkstyle:check
+This runs the Checkstyle plugin and reports any style violations.
 
 Deployment
-Add additional notes about how to deploy.
+When you’re ready to deploy:
 
-Built with
-Mention the tools you used to create your project:
+Build the production version:
 
-Dropwizard – The web framework used
+bash
+Copy
+Edit
+mvn package
+Upload the generated .jar or .war file to your server.
 
-Maven – Dependency management
+Run it using your preferred web server or container.
 
-ROME – Used to generate RSS feeds
+Notes:
+
+Make sure your environment variables are set correctly for production.
+
+Use HTTPS and a reverse proxy if needed.
+
+Test the deployed version thoroughly before announcing it live.
+
+Built With
+This project uses several tools and frameworks:
+
+Dropwizard – The main web framework used to build RESTful web services.
+
+Maven – For dependency management and build automation.
+
+ROME – Used for generating RSS feeds.
 
 Contributing
-Please read the CONTRIBUTING.md for details on our code of conduct and the process for submitting pull requests.
+We welcome contributions! Please read our CONTRIBUTING.md to understand our code of conduct and how to submit pull requests.
 
-Tested on various sites like:
+Tested On
+This project has been tested on various live sites to ensure compatibility and stability:
+
 https://pipeliner.bg/
-and
+
 https://cestitke.rs/
-and
+
 https://xn--80ajcknnch5m.net/
 
-Everything is working normal. No conflicts with PHP modules, https requests.
+https://calendariofestivo.it/
+
+https://szabadnapok.hu/
+
+https://festazyrtare.al/
+
+https://neradni-dani.rs/
+
+https://nigeriaholidays.com.ng/
+
+Everything works normally, with no conflicts with PHP modules or HTTPS requests.
